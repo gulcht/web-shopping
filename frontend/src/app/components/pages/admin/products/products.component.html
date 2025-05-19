@@ -1,0 +1,46 @@
+
+<div style="height: 1%;"></div>
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding:5px;"
+>
+  <div style="display: flex; ">
+    <div style="display: flex; flex-direction: row; align-items: center;">
+    <button mat-button style="color: #003087;" (click)="findAllProduct()"><mat-icon >dashboard</mat-icon></button>
+      <div>
+        <button mat-button style="color: #012169;" *ngFor="let category of categories" value="{{category.category_id}}" (click)="findByCategory(category.name)">{{category.name}}</button>
+      </div>
+    </div>
+  </div>
+  <button mat-flat-button style="background-color: #003087; color: white;" (click)="addProduct()">เพิ่มข้อมูลอาหาร</button>
+</div>
+
+<div class="product" >
+  <div class="list">
+    <div #product *ngFor="let product of this.products" style="width: 360px; height: fit-content; ">
+      <div class="info">
+        <div style="justify-content: space-between; flex-direction: row; display: flex;" (click)="show(product)">
+          <div>{{product.name}}</div>
+          <div>{{product.price}} THB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- detail -->
+  <div class="col-sm-8 show">
+    <div *ngIf="selectedProduct != undefined ">
+      <div class="detail">
+        <img src="{{this.selectedProduct.image}}" style="object-fit: cover;" alt="">
+        <div class="footer">
+          <div style="justify-content: space-between; flex-direction: row; display: flex; font-size: large;">
+            <span>{{this.selectedProduct.name}}</span>
+            <span>{{this.selectedProduct.price}} THB</span>
+          </div>
+          <span>{{this.selectedProduct.category}}</span>
+          <div class="button-group">
+            <button mat-flat-button style="background-color: #003087; color: #ffffff; margin-right: 10px;" (click)="editProduct()">แก้ไข</button>
+            <button mat-flat-button color="warn" (click)="deleteProduct(this.selectedProduct.product_id)">ลบ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!-- sidebar -->
+<div class="sidebar">
+  <div class="logo-details">
+    <mat-icon>supervised_user_circle</mat-icon>
+    <span class="logo-name">Owner</span>
+  </div>
+
+  <ul class="navi-links">
+    <li>
+      <a [routerLink]="['/admin', {outlets: {adminoutlet: ['orders']}}]">
+        <mat-icon> store_mall_directory</mat-icon>
+        <span class="link-name">Orders</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin', {outlets: {adminoutlet: ['products']}}]">
+        <mat-icon> fastfood</mat-icon>
+        <span class="link-name">Products</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin', {outlets: {adminoutlet: ['categories']}}]">
+        <mat-icon> layers</mat-icon>
+        <span class="link-name">Categories</span>
+      </a>
+    </li>
+    <li style="margin-top: 20px;">
+      <a routerLink="" (click)="logOut()">
+        <mat-icon>keyboard_return</mat-icon>
+        <span class="link-name">Log out</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+<!-- home -->
+<div class="home">
+  <router-outlet name="adminoutlet"></router-outlet>
+</div>

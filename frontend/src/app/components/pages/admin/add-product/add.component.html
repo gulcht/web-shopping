@@ -1,0 +1,19 @@
+<div class="container">
+  <p>เพิ่มอาหารใหม่</p>
+  <label>อาหาร</label>
+  <input type="text" name="name" #name>
+  <label>ราคา</label>
+  <input type="number" name="price" #price>
+  <label>Url รูปภาพอาหาร</label>
+  <textarea type="text" name="url" #url #detail></textarea>
+  <label>หมวดหมู่อาหาร</label>
+  <select name="category" #category>
+    <option *ngFor="let category of categories" value="{{category.category_id}}">{{category.name}}</option>
+  </select>
+
+  <div class="button">
+    <button mat-flat-button style="background-color: #003087; margin-right: 10px;" (click)="addProduct(name.value, +price.value, url.value, +category.value)">Add</button>
+    <button mat-flat-button color="warn" (click)="close()">Close</button>
+  </div>
+
+</div>

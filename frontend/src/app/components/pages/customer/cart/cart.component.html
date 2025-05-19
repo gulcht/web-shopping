@@ -1,0 +1,112 @@
+<section class="h-100 h-custom" style="background-color: #d2c9ff;">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card " style="border-radius: 15px;" style="border-radius: 1px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                    <h5 class="mb-0 text-muted">{{cart.length}} items</h5>
+                  </div>
+                  <hr class="my-4">
+                  <div class="list">
+                    <div class="row mb-4 d-flex justify-content-between align-items-center item"  *ngFor="let product of cart">
+                      <div class="col-md-2 col-lg-2 col-xl-2">
+                        <img
+                          src="{{product.image}}"
+                          class="img-fluid rounded-3" alt="Cotton T-shirt">
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-xl-3">
+                        <h4 class="text-muted">{{product.name}}</h4>
+                        <!-- <h6 class="text-black mb-0">{{product.category}}</h6> -->
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <button class="btn btn-link px-2 btn-step"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                          (click)="stepDown(product.amount, product.product_id, product.user_id)">
+                          -
+                        </button>
+
+                        <input id="form1" min="1" name="quantity" [value]="product.amount" type="number"
+                          class="form-control form-control-sm" />
+
+                        <button class="btn btn-link px-2 btn-step"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                          (click)="stepUp(product.amount, product.product_id, product.user_id)"
+                          >
+                        +
+                        </button>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h4 class="mb-0">{{product.price}}</h4>
+                      </div>
+                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                        <a class="text-muted" (click)="deleteItem(product.product_id)"><mat-icon>close</mat-icon></a>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="pt-5">
+                    <h4 class="mb-0"><a routerLink="/home" class="text-body">Back to shop</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 bg-grey">
+                <div class="p-5">
+                  <h2 class="fw-bold mb-5 mt-2 pt-1">Summary</h2>
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-4">
+                    <h4 class="text-uppercase">items {{cart.length}}</h4>
+                    <h4>{{totalprice}} THB</h4>
+                  </div>
+
+                  <!-- <h5 class="text-uppercase mb-3">Shipping</h5>
+
+                  <div class="mb-4 pb-2">
+                    <select class="select">
+                      <option value="1">Standard-Delivery- €5.00</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      <option value="4">Four</option>
+                    </select>
+                  </div> -->
+
+                  <!-- <h5 class="text-uppercase mb-3">Give code</h5> -->
+                  <hr class="my-4">
+                  <div class="mb-5">
+                    <div class="form-outline">
+                      <!-- <input type="text" id="form3Examplea2" class="form-control form-control-lg" /> -->
+                      <label class="form-label"><h2>Delivery location</h2></label>
+                      <input matInput type="text" class="form-control shadow-none" placeholder="Name" #name style="margin-bottom: 5px; text-align: left;" />
+                      <textarea class="form-control shadow-none" id="" cols="30" rows="3" placeholder="Address" #address style="margin-bottom: 5px;"></textarea>
+                      <input type="number" class="form-control shadow-none" style="margin-bottom: 5px; text-align: left;" #phone placeholder="Phone"/>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h4 class="text-uppercase">Total price</h4>
+                    <h4>{{totalprice}} THB</h4>
+                  </div>
+
+                  <button type="button" style="width: 100%;" class="btn btn-dark btn-block btn-lg btn-purchase"
+                    data-mdb-ripple-color="dark" (click)="buy(name.value, address.value, phone.value, +cart.length)">Purchase</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

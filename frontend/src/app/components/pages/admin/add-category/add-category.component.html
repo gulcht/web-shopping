@@ -1,0 +1,12 @@
+<div class="container">
+  <p>เพิ่มประเภทอาหาร</p>
+  <div class="input">
+    <label style="margin-right: 10px;">ชื่อประเภทอาหาร</label>
+    <input style="width: fit-content;" type="text" name="name" #name>
+  </div>
+
+  <div class="button">
+    <button mat-flat-button style="background-color: #003087; margin-right: 10px; color: white;" (click)="addCategory(name.value)">Add</button>
+    <button mat-flat-button color="warn" (click)="close()">Close</button>
+  </div>
+</div>

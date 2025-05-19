@@ -1,0 +1,32 @@
+<div class="main">
+  <div style="display: flex; flex-direction: row; justify-content: space-between; ">
+    <H2>Order: {{selectedOrder.order_id}}</H2>
+    <H2>{{totalprice}} THB</H2>
+    <div style="width:auto; height: 100%; top: 0;">
+      <select name="status" #status (change)="updateStatus(+status.value, selectedOrder.order_id)">
+        <option *ngFor="let status of statuses" value="{{status.status_id}}"
+        [selected] = "selectedOrder.status == status.name"
+        >{{status.name}}</option>
+      </select>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <div>{{selectedOrder.name}} {{selectedOrder.phone}}</div>
+    <div>{{selectedOrder.address}}</div>
+  </div>
+  <hr>
+  <table>
+    <tr>
+      <th class="col-sm-8">Name</th>
+      <th class="col-sm-2" style="text-align: center;">Amount</th>
+      <th class="col-sm-2" style="text-align: center;">Price</th>
+    </tr>
+    <tr *ngFor="let order of orderdetails">
+      <td class="col-sm-8">{{order.name}}</td>
+      <td class="col-sm-2" style="text-align: center;">{{order.amount}}</td>
+      <td class="col-sm-2"style="text-align: center;">{{order.price}} THB</td>
+    </tr>
+  </table>
+
+</div>

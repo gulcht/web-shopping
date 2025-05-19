@@ -1,0 +1,53 @@
+
+<app-header></app-header>
+<body>
+
+<div class="menu">
+  <input type="checkbox" id="check">
+  <label for="check" class="button">
+    <mat-icon style="font-size: 2rem">search</mat-icon>
+  </label>
+  <nav>
+    <div style="margin-right: 10px;">
+      <input #name (keyup)="findByName(name.value)" class="input-search" placeholder="Search">
+    </div>
+
+
+    <!-- <button class="btn-filter">dsads</button> -->
+    <div *ngFor="let category of categories">
+      <button class="btn-filter" (click)="findByCategory(category.name)">{{category.name}}</button>
+    </div>
+  </nav>
+</div>
+
+
+  <ul>
+    <li *ngFor="let product of products;">
+    <div class="product">
+      <img  class="product-img" src="{{product.image}}" alt="">
+      <div class="details">
+        <div class="content">
+          <div class="name">
+            {{product.name}}
+          </div>
+          <div class="category">
+            {{product.category}}
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
+          <div class="number-input">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+            <input #amount class="quantity" min="1" name="quantity" value="1" type="number">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+          </div>
+          <div class="price">
+            {{product.price | currency}}
+          </div>
+        </div>
+      </div>
+      <button (click)="addToCart(product.product_id, +amount.value); myalert();" class="btn-add">Add to cart</button>
+    </div>
+    </li>
+  </ul>
+
+</body>

@@ -1,0 +1,28 @@
+<div class="main">
+  <!-- <div class="show" *ngFor="let order of orderdetails">
+    <div>
+      {{order.name}}
+    </div>
+    <div>
+      {{order.amount}}
+    </div>
+  </div> -->
+  <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <H2>Order: {{selectedOrder.order_id}}</H2>
+    <H2>{{totalprice}} THB</H2>
+  </div>
+
+  <table>
+    <tr>
+      <th class="col-sm-8">Name</th>
+      <th class="col-sm-2" style="text-align: center;">Amount</th>
+      <th class="col-sm-2" style="text-align: center;">Price</th>
+    </tr>
+    <tr *ngFor="let order of orderdetails">
+      <td class="col-sm-8">{{order.name}}</td>
+      <td class="col-sm-2" style="text-align: center;">{{order.amount}}</td>
+      <td class="col-sm-2"style="text-align: center;">{{order.price}} THB</td>
+    </tr>
+  </table>
+
+</div>

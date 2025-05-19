@@ -1,0 +1,21 @@
+<div class="container" >
+  <p>แก้ไขข้อมูลอาหาร</p>
+  <label>อาหาร</label>
+  <input type="text" name="name" #name value="{{selectedProduct.name}}">
+  <label>ราคา</label>
+  <input type="number" name="price" #price value="{{selectedProduct.price}}">
+  <label>Url รูปภาพอาหาร</label>
+  <textarea type="text" name="image" #image value="{{selectedProduct.image}}"></textarea>
+  <label>หมวดหมู่อาหาร</label>
+  <select name="category" #category>
+    <option *ngFor="let category of categories" value="{{category.category_id}}"
+    [selected] = "selectedProduct.category == category.name"
+    >{{category.name}}</option>
+  </select>
+
+  <div class="button">
+    <button mat-flat-button style="background-color: #003087; margin-right: 10px;" (click)="save(name.value, +price.value, image.value, +category.value)">Add</button>
+    <button mat-flat-button color="warn" (click)="close()">Close</button>
+  </div>
+
+</div>

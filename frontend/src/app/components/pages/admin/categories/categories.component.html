@@ -1,0 +1,15 @@
+<div style="height: 1%;">
+</div>
+  <div class="contianer">
+    <div style="display: flex; flex-direction: column; margin:1%">
+      <div style="font-size:24px; margin-bottom:1%; display: flex; flex-direction:row; align-items: center; justify-content: space-between;">
+        <div>ประเภทอาหาร</div>
+        <button mat-flat-button style="background-color: #003087; color: white;" (click)="addCategory()">เพิ่มประเภทอาหาร</button>
+      </div>
+      <div class="categories" *ngFor="let category of categories">
+        {{ category.name }}
+        <button mat-flat-button color="warn" (click)="deleteCategory(category.category_id)">ลบ</button>
+      </div>
+    </div>
+  <div>
+

@@ -1,0 +1,38 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 500;
+  margin: 20px;
+}
+
+.button{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+*{
+  color: aliceblue;
+}
+
+.button{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+textarea{
+  color: #000;
+}
+input{
+  color: #000;
+}
+
+select{
+  color: #000;
+}
+select option{
+  color: #000;
+}

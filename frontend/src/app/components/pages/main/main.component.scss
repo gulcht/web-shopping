@@ -1,0 +1,154 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background: url(https://i.redd.it/gfjv18qcqcx61.png);
+  // background: url(https://i.redd.it/tczmbfz9euy01.jpg);
+}
+
+body::after {
+  content: "";
+
+  height: auto;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.wrapper{
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgb(255, 255, 255, .5);
+  border-radius: 1px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.685);
+  box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: height .2s ease;
+}
+
+.wrapper .form-box{
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper .form-box.login{
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.wrapper.active{
+  height: 520px;
+}
+
+.wrapper .form-box.register{
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #162938;
+  margin: 30px 0;
+ }
+
+ .form-box h2{
+  font-size: 2em;
+  color: #162938;
+  text-align: center;
+ }
+
+ .input-box label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #162938;
+  pointer-events: none;
+  transition: 0.2s;
+  pointer-events: none;
+ }
+
+ .input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #162938;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+ }
+
+ input:focus::placeholder {
+  color: transparent;
+  transition: 0.3s;
+}
+
+.btn{
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 1px;
+  background-color: #162938;
+  cursor: pointer;
+  font-size: 1em;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-register{
+  font-size: 0.9em ;
+  color: #162938;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.login-register p a{
+  color: #0060aa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-register p a:hover{
+  text-decoration: underline;
+}

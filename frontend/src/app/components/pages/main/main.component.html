@@ -1,0 +1,49 @@
+
+  <body>
+    <div class="wrapper">
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form ngNativeValidate>
+          <div class="input-box">
+            <span></span>
+            <input type="email" #email placeholder="Email" >
+          </div>
+          <div class="input-box">
+            <span></span>
+            <input type="password" #password placeholder="Password" >
+          </div>
+          <a class="btn" (click)="login(email.value, password.value)">Login</a>
+          <div class="login-register">
+            <p>Don't have an account?
+              <a href="#" class="register-link">Register</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <h2>Registration</h2>
+        <form ngNativeValidate action="#">
+          <div class="input-box">
+            <span></span>
+            <input #email2 type="email" placeholder="Email">
+          </div>
+          <div class="input-box">
+            <span></span>
+            <input #name type="text" placeholder="Username">
+          </div>
+          <div class="input-box">
+            <span></span>
+            <input type="password" #password2 placeholder="Password">
+          </div>
+          <a class="btn" (click)="register(email2.value, password2.value, name.value)">Register</a>
+          <div class="login-register">
+            <p>I already have account.
+              <a href="#" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+

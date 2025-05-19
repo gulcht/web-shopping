@@ -1,0 +1,33 @@
+.container{
+  display: flex;
+  align-items: center;
+}
+
+.categories{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 18px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  height: auto;
+}
+.categories:hover{
+  color: #009CDE;
+}
+
+.detail{
+  height: 36rem;
+  width: 36rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 10%;
+}
+
+*{
+  color:#003087;
+}

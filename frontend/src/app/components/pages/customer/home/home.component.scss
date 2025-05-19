@@ -1,0 +1,313 @@
+body{
+  margin-top: 80px;
+}
+
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li .product{
+  height: 24rem;
+  width: 17rem;
+  border: 1px solid lightgrey;
+  border-radius: 1px ;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  transition: 0.3s;
+}
+
+ul li .product:hover{
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: .5rem .75rem;
+  position: relative;
+  color: #34495e;
+  margin: .5em;
+}
+
+ul li .product img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+
+.content{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.category{
+  color: #a7a7a7;
+  font-size: 14px;
+}
+
+.name{
+  // color: #212121;
+  font-size: 20px;
+}
+
+.price{
+  // color: #212121;
+  font-size: 1.4em;
+}
+// input
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+  color: #34495e;
+}
+
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0;
+  color: #34495e;
+  position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 1rem;
+  height: 2px;
+  color: #34495e;
+  background-color: #34495e;
+  transform: translate(-50%, -50%);
+}
+
+.number-input input:focus{
+  border: none;
+}
+
+
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 3rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-size: 1rem;
+  height: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-add{
+  height: 100%;
+  border: none;
+  font-size: 1.2rem;
+  background-color: #34495e;
+  color: #ffffff;
+  cursor: pointer;
+  transform: 0.1s;
+}
+
+.btn-add:hover{
+  opacity: 0.9;
+}
+
+
+.menu{
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+}
+/* I hide the checkbox because I only need the label */
+#check{
+  display: none;
+}
+
+.button{
+  margin-top: 50;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  padding: 12px;
+  cursor: pointer;
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  right: 0;
+  top: auto;
+  z-index: 100;
+}
+.button:hover{
+  // background: #ff9d00;
+}
+
+
+
+// /* toggle icon animation */
+// #check:checked ~ .button span:nth-child(1){
+//   // width: 100%;
+//   // transform: rotate(45deg) translateY(6px) translateX(6px);
+// }
+// #check:checked ~ .button span:nth-child(2){
+//   width: 0;
+// }
+
+// #check:checked ~ .button span:nth-child(3){
+//   // width: 100%;
+//   // transform: rotate(-45deg) translateY(-7px) translateX(7px);
+// }
+
+
+/* the nav height is set to 0 when the navbar is closed */
+
+nav{
+  text-align: left;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  background: #ffffff;
+  height: 0;
+  backdrop-filter: blur(0px);
+  margin: 10px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+nav a{
+  text-decoration: none;
+  color: #0c1019;
+  display: block;
+  font-size: 18px;
+  transition: all 0.4s cubic-bezier(.22,.43,.35,1.5);
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top;
+  text-align: center;
+  border-bottom: 1px solid #b4ac97;
+}
+
+nav a:hover{
+  background: #ffdd7f;
+}
+
+.input-search{
+  height: 100%;
+  // border: none;
+  // height: 100%;
+  background-color: #ffffff;
+  color: #34495e;
+  padding: 1rem;
+  border: 1px;
+  border-radius: 1px;
+  font-size: 1em;
+  content: "search";
+}
+
+.input-search:focus{
+  outline: none;
+  height: 100%;
+}
+// .input-search::content{
+//   content: "search";
+//   color: #34495e;
+// }
+.logo-search{
+  color: #34495e;
+
+  padding: 2px;
+}
+// .btn-search{
+//   border: none;
+//   height: 100%;
+//   width: fit-content;
+//   padding: 5px;
+//   cursor: pointer;
+//   background-color: #ffffff;
+//   border-radius: 1px;
+// }
+
+.btn-filter{
+  margin-left: 2px;
+  height: 100%;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 1px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check:checked ~ nav{
+  height: 35px;
+  border: 2px solid #34495e;
+  background: #34495e;
+}
+
+#check:checked ~ nav a{
+  padding: 10px;
+  opacity: 1;
+  transform: scale(1);
+
+}
+
